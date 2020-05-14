@@ -3,5 +3,5 @@ const router = express.Router ();
 
 
 const controller = require ('../controllers/buscadorController');
-router.get('/buscador', controller.buscador);
+router.get('/', controller.buscador);
 module.exports = router
