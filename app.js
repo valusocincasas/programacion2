@@ -29,7 +29,7 @@ app.use('/users', usersRouter);
 app.use ('/buscador',buscadorRouter);
 app.use ('/detalle',detalleRouter);
 app.use ('/home',homeRouter);
-app.use ('/seriesByGenre',seriesByGenreRouter);
+app.use ('/seriesbygenre',seriesByGenreRouter);
 app.use ('/seriesGenres',seriesGenresRouter);
 
 // catch 404 and forward to error handler
