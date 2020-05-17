@@ -10,7 +10,8 @@ var buscadorRouter = require('./routes/buscador');
 var detalleRouter = require('./routes/detalle');
 var homeRouter = require('./routes/home');
 var seriesByGenreRouter = require('./routes/seriesByGenre');
-var seriesGenresRouter = require('./routes/home');
+var seriesGenresRouter = require('./routes/seriesGenres');
+var resultadoBusquedaRouter = require('./routes/resultadoBusqueda');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use ('/detalle',detalleRouter);
 app.use ('/home',homeRouter);
 app.use ('/seriesbygenre',seriesByGenreRouter);
 app.use ('/seriesGenres',seriesGenresRouter);
+app.use ('/resultadoBusqueda',resultadoBusquedaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,6 +1,8 @@
 const controlador = {
     home: (req,res) =>{
-        res.render ('home.ejs')
-    }
-};
+        res.render ('home');
+    },
+   
+}
+
 module.exports = controlador

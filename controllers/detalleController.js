@@ -1,6 +1,6 @@
 const controlador = {
     detalle: (req,res) =>{
-        res.render ('detalle.ejs')
+        res.render ('detalle')
     }
 };
 module.exports = controlador

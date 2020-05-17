@@ -1,6 +1,6 @@
 const controlador = {
     genres: (req,res) =>{
-        res.render ('seriesGenres.ejs')
+        res.render ('seriesGenres')
     }
 };
 module.exports = controlador
