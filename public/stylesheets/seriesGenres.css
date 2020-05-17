@@ -20,3 +20,10 @@ main ul li:hover a{
   padding: 0 5px;
   cursor: pointer;
 }
+footer{
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(112, 19, 138, 0.86), #c5454d);
+  width: 100%;
+  
+}

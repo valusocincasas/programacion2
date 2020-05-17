@@ -24,3 +24,10 @@ main .slider h3{
   border-radius: 20px;
   padding: 0 5px 0 5px;
 }
+footer{
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(112, 19, 138, 0.86), #c5454d);
+  width: 100%;
+  
+}

@@ -48,3 +48,11 @@ header nav ul li a {
 header nav ul li a:hover{
 	color: black;
 }
+
+footer{
+	text-align: center;
+	color: white;
+	background-image: linear-gradient(rgba(112, 19, 138, 0.86), #c5454d);
+	width: 100%;
+	
+  }

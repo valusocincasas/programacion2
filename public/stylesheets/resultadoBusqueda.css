@@ -11,3 +11,10 @@ main{
   width: 100%;
   max-height: 580px;
 }
+footer{
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(112, 19, 138, 0.86), #c5454d);
+  width: 100%;
+  
+}

@@ -14,3 +14,11 @@ main .grilla-series div a{
   text-decoration: none;
 
 }
+footer{
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(112, 19, 138, 0.86), #c5454d);
+  width: 100%;
+  
+}
+
