@@ -12,7 +12,7 @@ var homeRouter = require('./routes/home');
 var seriesByGenreRouter = require('./routes/seriesByGenre');
 var seriesGenresRouter = require('./routes/seriesGenres');
 var resultadoBusquedaRouter = require('./routes/resultadoBusqueda');
-
+var usuariosRouter = require ('./routes/usuarios');
 var app = express();
 
 // view engine setup
@@ -33,6 +33,7 @@ app.use ('/home',homeRouter);
 app.use ('/seriesbygenre',seriesByGenreRouter);
 app.use ('/seriesGenres',seriesGenresRouter);
 app.use ('/resultadoBusqueda',resultadoBusquedaRouter);
+app.use ('/usuarios',usuariosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
