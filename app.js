@@ -13,6 +13,7 @@ var seriesByGenreRouter = require('./routes/seriesByGenre');
 var seriesGenresRouter = require('./routes/seriesGenres');
 var resultadoBusquedaRouter = require('./routes/resultadoBusqueda');
 var usuariosRouter = require ('./routes/usuarios');
+var loginRouter = require ('./routes/modulo-login');
 var app = express();
 
 // view engine setup
@@ -34,6 +35,7 @@ app.use ('/seriesbygenre',seriesByGenreRouter);
 app.use ('/seriesGenres',seriesGenresRouter);
 app.use ('/resultadoBusqueda',resultadoBusquedaRouter);
 app.use ('/usuarios',usuariosRouter);
+app.use ('/login',loginRouter);
 app.use (express.urlencoded ({ extended:false}));
 app.use (express.json ());
 

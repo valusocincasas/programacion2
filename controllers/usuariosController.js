@@ -1,4 +1,5 @@
 const DB = require('../database/models');
+const login = require('../modulo-login');
 const OP = DB.Sequelize.Op;
 
 
@@ -13,16 +14,31 @@ module.exports = {
 					listadoUsuarios: resultados[0]
 				});
 			})
+			
+
 			.catch(function (errors) {
 				return res.send(errors);
 			});
 	},
+
+	store: function (req,res) {
+		DB.usuarios.create ({
+	nombreCompleto: req.body.user, 
+	email: req.body.email, 
+	password: req.body.password,
+	fechaNacimiento: req.body.birth-date
+	
+		});
+		res.redirect ("/usuarios")
+	},
+
 	create: (req, res) => {
 		DB.usuarios.create()
 			.then(function (Usuarios) {
-				return res.render('usuariosForm', {
+				console.log (Usuarios)
+				return res.render('home', {
 					listadoDeUsuarios: Usuarios,
-				});
+				}); 
 			})
 			.catch(function (error) {
 				return res.send(error);
@@ -42,16 +58,7 @@ module.exports = {
 			})
 	}, */
 	
-store: function (req,res) {
-	DB.usuarios.create ({
-nombreCompleto: req.body.user, 
-email: req.body.email, 
-password: req.body.password,
-fechaNacimiento: req.body.birth-date
 
-	});
-	res.redirect ("/usuarios")
-}
 
 
 
