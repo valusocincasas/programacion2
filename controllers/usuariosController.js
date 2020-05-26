@@ -1,4 +1,7 @@
 const DB = require('../database/models');
+const OP = DB.Sequelize.Op;
+
+
 
 module.exports = {
 	index: function (req, res) {
@@ -6,13 +9,51 @@ module.exports = {
 			.sequelize
 			.query('SELECT * FROM usuarios')
 			.then(function (resultados) {
-				return res.render('usuarios', {
+				return res.render('usuariosForm', {
 					listadoUsuarios: resultados[0]
 				});
 			})
 			.catch(function (errors) {
 				return res.send(errors);
 			});
-	}
+	},
+	create: (req, res) => {
+		DB.usuarios.create()
+			.then(function (Usuarios) {
+				return res.render('usuariosForm', {
+					listadoDeUsuarios: Usuarios,
+				});
+			})
+			.catch(function (error) {
+				return res.send(error);
+			})
+		
+		
+	},
+
+	
+	/* store: (req, res) => {
+		DB.usuarios.create(req.body)
+			.then(function (Usuarios) {
+				return res.redirect('/usuarios');
+			})
+			.catch(function (error) {
+				return res.send(error);
+			})
+	}, */
+	
+store: function (req,res) {
+	DB.usuarios.create ({
+nombreCompleto: req.body.user, 
+email: req.body.email, 
+password: req.body.password,
+fechaNacimiento: req.body.birth-date
+
+	});
+	res.redirect ("/usuarios")
+}
+
+
+
 };
 

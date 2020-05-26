@@ -34,6 +34,8 @@ app.use ('/seriesbygenre',seriesByGenreRouter);
 app.use ('/seriesGenres',seriesGenresRouter);
 app.use ('/resultadoBusqueda',resultadoBusquedaRouter);
 app.use ('/usuarios',usuariosRouter);
+app.use (express.urlencoded ({ extended:false}));
+app.use (express.json ());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
