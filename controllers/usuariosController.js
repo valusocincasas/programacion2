@@ -1,5 +1,5 @@
 const DB = require('../database/models');
-const login = require('../modulo-login');
+const login = require('./modulo-loginController');
 const OP = DB.Sequelize.Op;
 
 
@@ -26,7 +26,7 @@ module.exports = {
 	nombreCompleto: req.body.user, 
 	email: req.body.email, 
 	password: req.body.password,
-	fechaNacimiento: req.body.birth-date
+	fechaNacimiento: req.body.birthDate
 	
 		});
 		res.redirect ("/usuarios")
