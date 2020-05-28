@@ -6,41 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="modal-sections" uk-modal>
-        <div class="uk-modal-dialog">
-            <button class="uk-modal-close-default" type="button" uk-close></button>
-            <div class="uk-modal-header">
-                <h2 class="uk-modal-title">Log In</h2>
-            </div>
-            <div class="uk-modal-body">
-              <div class="container">
-                <form class="login">
-
-
-       <label for="uname"><b>Usuario</b></label>
-       <input type="text" placeholder="Usuario" name="uname" required class="nombreDeUsuario">
-
-            </div>
-            <div class="uk-modal-footer uk-text-right">
-                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                <button class="uk-button uk-button-primary" type="submit">LogIn</button>
-            </div>
-            </form>
-        </div>
+  <form action="/login" method="post">
+    <div class="imgcontainer">
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
+  
+    <div class="container">
+      
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <label for="psw"><b>email</b></label>
+      <input type="email"  name="email" required>
+  
+      <button type="submit">Login</button>
+     
     </div>
-    <header>
-      <!-- header-->
-      <div class="header">
-    <a href="#principal" class="logo">
-      <img src="logo.PNG"> </a>
-      <div class="header-right">
-      <a class="active" href="#home">HOME</a>
-      <a href="#generos"</div> GENEROS</a>
-      <span class="espacio-login">
-        <a href="#LOGIN"><a class="uk-button uk-button-default" href="#modal-sections" uk-toggle>LogIn</a>
-      </span>
-
-</a>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
 </body>
 </html>

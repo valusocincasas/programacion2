@@ -29,7 +29,7 @@ module.exports = {
 	fechaNacimiento: req.body.birthDate
 	
 		});
-		res.redirect ("/usuarios")
+		res.redirect ("/home")
 	},
 
 	create: (req, res) => {

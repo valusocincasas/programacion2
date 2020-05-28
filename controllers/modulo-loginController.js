@@ -8,7 +8,8 @@ let moduloLogin = {
             }
         })
         .then(function(usuario) {
-            return usuario != null;
+            
+            return res.send(usuario); 
         })
     },
 
