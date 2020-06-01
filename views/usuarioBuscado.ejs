@@ -40,19 +40,26 @@
       </nav>
   </header>
 
-    <div class="container">
-        <h3 align="center">Inserta el usuario que estés buscando:</h3>
-        <hr>
-        <form action="/buscaUsuario/resultadoUsuario" method="post">
-            <input type="hidden" value="e59c94a503ea78e9502aa8e308f21eb5" name="key">
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Usuario:</label>
-                <input type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="e.g: javi@dh.com o Javier Herrera" autofocus>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
-        </form>
-
-    </div>
+  <ul>
+    <% if (usuarioBuscado.length > 0) { %>
+    <% for( let i = 0; i < usuarioBuscado.length; i++ ) { %>
+        <li>
+            <%= usuarioBuscado.email %> 
+                <br><b>Usuarios:</b> <br>
+               
+                    <i>
+                        <%= usuarioBuscado[i].email %> 
+                        <a href="/buscaUsuario/detalleUsuario/<%= usuarioBuscado[i].id %>">ver detalle</a>
+                    </i> <br>
+               
+            <% } %>
+            <hr>
+        </li>
+    <% } else{ %>
+        <h2>No se encontaron Usuarios en tu busqueda</h2>
+        <% } %>
+</ul>
+    
 
     <br>
     <footer class="footer">
