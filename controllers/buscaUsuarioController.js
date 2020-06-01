@@ -3,6 +3,14 @@ const OP = db.Sequelize.Op
 console.log(OP)
 
 let buscaUsuario = {
+
+    porId: function(req,res){
+        db.usuarios
+        .findByPk(req.params.id)
+        .then (function(usuario){
+            return res.render ('detalleUsuario',{usuario:usuario});
+        })
+    },
     vista: function (req, res) {
         res.render('buscaUsuario');
     },

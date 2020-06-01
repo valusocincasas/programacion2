@@ -28,12 +28,15 @@ let moduloLogin = {
         return db.usuarios.findOne({
             where:{
                 email:email,
-                password: pass
+        
             },
         })
         .then(results=>{
-            console.log(results)
-            return results;
+           if (results && bcrypt.compareSync(pass,results.password)) {
+               return results
+           } else {
+               return null
+           }
         })
     }
 }
