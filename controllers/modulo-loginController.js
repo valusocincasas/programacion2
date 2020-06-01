@@ -32,6 +32,7 @@ let moduloLogin = {
             },
         })
         .then(results=>{
+            console.log(results)
             return results;
         })
     }
