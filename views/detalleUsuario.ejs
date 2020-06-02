@@ -33,10 +33,24 @@
             </ul>
         </nav>
     </header>
+    <ul>
+    <h2>Estas viendo el perfil del usuario <%= usuario.nombreCompleto %> </h2>
+    <h3>Email: <%= usuario.email%></h3>
+    <h3>Fecha de nacimiento:<%= usuario.fechaNacimiento%></h3>
+  </ul>
+    <h2>Lista de reseñas</h2>
+    <% if (review.length > 0) { %>
+      <% for( let i = 0; i < review.length; i++ ) { %>
+        <h3> Reseña de la serie<%= review[i].peliculaId %></h3>     
+        <p><%= review[i].text %></p>            
+              <% } %>
+              <hr>
+          </li>
+      <% } else{ %>
+          <h2>No se encontaron reseñas escritas por este usuario</h2>
+          <% } %>
+  </ul>
 
-    <h3><%= usuario.nombreCompleto %></h3>
-    <h3><%= usuario.email%></h3>
-    <h3><%= usuario.fechaNacimiento%></h3>
 
     <br>
     <footer class="footer">

@@ -8,7 +8,18 @@ let buscaUsuario = {
         db.usuarios
         .findByPk(req.params.id)
         .then (function(usuario){
+            db.review.findAll({
+                where: {
+                    idUser: usuario.id
+                }
+            })
             return res.render ('detalleUsuario',{usuario:usuario});
+        })
+        .then(function(reviews) {
+            res.render('detalleUsuario', {
+                usuario: usuario,
+                reviews: review
+            })
         })
     },
     vista: function (req, res) {
@@ -28,6 +39,7 @@ let buscaUsuario = {
             res.render('usuarioBuscado', {
                 usuarioBuscado: usuarioBuscado
             })
+
 
            /* if(usuarioBuscado.length == 0) {
                 res.render('usuarioBuscado', {
