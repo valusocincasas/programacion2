@@ -3,7 +3,7 @@ let op= db.Sequelize.Op;
 
 module.exports = {
     detail: function(req,res) {
-        db.Review.findAll({
+        db.resenas.findAll({
             where: {
             idPelicula: req.query.peliculaId
             }
@@ -22,8 +22,8 @@ module.exports = {
                 db.review.create ({
                     idPelicula: req.body.peliculaId,
                     idUser: usuario.id,
-                    text: req.body.text,
-                    ranking: req.body.ranking
+                    text: req.body.textoResena,
+                    ranking: req.body.puntaje
                 })
                 .then(function() {
                     res.redirect('/detalle/?idPelicula='+req.body.peliculaId)
