@@ -1,0 +1,36 @@
+let db= require('../database/models')
+let op= db.Sequelize.Op;
+
+module.exports = {
+    detail: function(req,res) {
+        db.Review.findAll({
+            where: {
+            idPelicula: req.query.peliculaId
+            }
+        })
+        .then(function(reviews){
+            res.render('detalle', {
+                idPelicula: req.query.peliculaId,
+                reviews: reviews
+            })
+        })
+    },
+    create: function(req,res){
+        moduloLogin.validar(req.body.email, req.body.password)
+        .then(function(usuario) {
+            if(usuario != undefined) {
+                db.review.create ({
+                    idPelicula: req.body.peliculaId,
+                    idUser: usuario.id,
+                    text: req.body.text,
+                    ranking: req.body.ranking
+                })
+                .then(function() {
+                    res.redirect('/detalle/?idPelicula='+req.body.peliculaId)
+                })
+            } else {
+                res.send("Hubo un error al crear esta reseña")
+            }
+        })
+    }
+};

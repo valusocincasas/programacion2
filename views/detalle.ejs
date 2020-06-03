@@ -63,7 +63,53 @@
           </div>
         </div>
       </div>
-
+      <div>
+        <h2>Reseñas</h2>
+      </ul>
+      <h2>Lista de reseñas</h2>
+      <% if (reviews.length > 0) { %>
+        <% for( let i = 0; i < reviews.length; i++ ) { %>
+          <small><%= reviews[i].usuario %></small>
+          <p><%= reviews[i].text %></p>            
+                <% } %>
+                <hr>
+            </li>
+        <% } else{ %>
+            <h2>No se encontaron reseñas escritas</h2>
+            <% } %>
+    </ul> 
+      </div>
+     <form action="/crearReview" method="get">
+       <div>
+         <input type="hidden" name="idPelicula" value="<%= idPelicula %>">
+       </div>
+       <div>
+         <label for="email">Email</label>
+         <input type="email" name="email" name="email">
+       </div>
+       <div>
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" name="password">
+      </div>
+      <div>
+        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+      </div>
+       <div>
+         <input type="radio" name="ranking" value="1">
+         <input type="radio" name="ranking" value="2">
+         <input type="radio" name="ranking" value="3">
+         <input type="radio" name="ranking" value="4">
+         <input type="radio" name="ranking" value="5">
+         <input type="radio" name="ranking" value="6">
+         <input type="radio" name="ranking" value="7">
+         <input type="radio" name="ranking" value="8">
+         <input type="radio" name="ranking" value="9">
+         <input type="radio" name="ranking" value="10">
+       </div>
+       <div>
+         <input type="submit" value="Enviar">
+       </div>
+     </form>
     </main>
     <br>
     <footer class="footer">
