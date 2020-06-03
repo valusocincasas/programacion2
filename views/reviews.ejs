@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class= "uk-container" > 
+        <div class= "uk-section uk-section-large"> 
+
+        
+    <% if (resultado.length ==0) {%>
+        <h1> No hiciste ninguna reseña todavía </h1>  <% } 
+        else { %> 
+        <h1 class= “uk-text-center”> <%= resultado [0].usuario.name %> ‘s reviews </h1> 
+         <% for (let i=0; i< resultado.length ; i++) { %>
+            <div class= "uk-card uk-card-secondary uk-margin"> 
+        <div class="uk-card-badge uk-label uk-margin-bottom" style="color: white;" > score: <%= resultado[i].puntaje %></div>
+        <div class= “uk-card-body"> 
+            <h4 class= "uk-margin-top"> <%= resultado[i].resena %> </h4> </div>
+            <div class= "uk-card-footer uk-flex uk-flex-between"> 
+<a class= "uk-text-success" href="/users/reviews/edit/ <%= resultado [i].id %>"> Edit </a>
+<a class= "uk-text-primary" href="/detalle?idPelicula= = <%= resultado [i].peliculaId %>"> Go to movie </a>
+<a class= "uk-text-danger" href="/users/reviews/delete/ <%= resultado [i].id %>"> Delete </a>
+            </div>
+    </div> 
+    <% } %>
+    <%} %>
+         </div>
+        </div>
+</body>
+</html>
