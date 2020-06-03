@@ -3,7 +3,7 @@ let op= db.Sequelize.Op;
 
 module.exports = {
     detail: function(req,res) {
-        db.resenas.findAll({
+        db.Resena.findAll({
             where: {
             idPelicula: req.query.peliculaId
             }
@@ -11,7 +11,7 @@ module.exports = {
         .then(function(reviews){
             res.render('detalle', {
                 idPelicula: req.query.peliculaId,
-                reviews: reviews
+                reviews: Resena
             })
         })
     },
@@ -19,7 +19,7 @@ module.exports = {
         moduloLogin.validar(req.body.email, req.body.password)
         .then(function(usuario) {
             if(usuario != undefined) {
-                db.review.create ({
+                db.Resena.create ({
                     idPelicula: req.body.peliculaId,
                     idUser: usuario.id,
                     text: req.body.textoResena,
