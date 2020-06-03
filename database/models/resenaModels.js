@@ -17,10 +17,10 @@ const Resena = sequelize.define (
     }
 )
 Resena.associate = function (models) {
-    Resena.belongsTo (models.usuario, {
+    Resena.belongsTo (models.usuarios, {
         as: 'usuario', 
     foreignKey: 'usuarioId'
     })
 }
+return Resena
  }
- return Resena

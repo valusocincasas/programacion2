@@ -8,7 +8,11 @@ let buscaUsuario = {
         db.usuarios
         .findByPk(req.params.id)
         .then (function(usuario){
-            return res.render ('detalleUsuario',{usuario:usuario});
+            db.Resena
+            .findAll(WHERE)
+            .then (function(reviews){
+                return res.render ('detalleUsuario',{reviews:reviews,usuario:usuario});
+            })
         })
         
     },

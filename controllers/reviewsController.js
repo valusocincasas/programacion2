@@ -3,15 +3,16 @@ let op= db.Sequelize.Op;
 
 module.exports = {
     detail: function(req,res) {
+        console.log (11111173636)
         db.Resena.findAll({
             where: {
-            idPelicula: req.query.peliculaId
+                peliculaId: req.query.serieId
             }
         })
         .then(function(reviews){
             res.render('detalle', {
-                idPelicula: req.query.peliculaId,
-                reviews: Resena
+                idPelicula: req.query.serieId,
+                reviews: reviews
             })
         })
     },
@@ -20,7 +21,7 @@ module.exports = {
         .then(function(usuario) {
             if(usuario != undefined) {
                 db.Resena.create ({
-                    idPelicula: req.body.peliculaId,
+                    idPelicula: req.body.serieId,
                     idUser: usuario.id,
                     text: req.body.textoResena,
                     ranking: req.body.puntaje

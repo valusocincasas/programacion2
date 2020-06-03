@@ -1,6 +1,7 @@
 const DB = require('../database/models');
 const login = require('./modulo-loginController');
 const OP = DB.Sequelize.Op;
+let bcrypt =require('bcryptjs');
 
 
 
@@ -25,7 +26,7 @@ module.exports = {
 		DB.usuarios.create ({
 	nombreCompleto: req.body.user, 
 	email: req.body.email, 
-	password: req.body.password,
+	password: bcrypt.hashSync(req.body.password,10),
 	fechaNacimiento: req.body.birthDate
 	
 		});
@@ -47,20 +48,6 @@ module.exports = {
 		
 	},
 
-	
-	/* store: (req, res) => {
-		DB.usuarios.create(req.body)
-			.then(function (Usuarios) {
-				return res.redirect('/usuarios');
-			})
-			.catch(function (error) {
-				return res.send(error);
-			})
-	}, */
-	
 
-
-
-
-};
+}
 
