@@ -11,9 +11,10 @@ const controlador = {
            if(usuario){
             // verificar sus datos
             //res.send(usuario)
-            modulo.validar(usuario.email, usuario.password)
-            .then(usuario => {
-                if(usuario){
+            modulo.validar(req.body.email, req.body.psw)
+            .then(usuario2 => {
+               // res.send(usuario2)
+                if(usuario2){
                     // cuando es todo correcto
                     res.redirect('/home')
                 } else {
