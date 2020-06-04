@@ -14,11 +14,12 @@ const Resena = sequelize.define (
     }, 
     {
         tableName: "resenas"
+       
     }
 )
 Resena.associate = function (models) {
     Resena.belongsTo (models.usuarios, {
-        as: 'usuario', 
+        as: 'usuarios', 
     foreignKey: 'usuarioId'
     })
 }
