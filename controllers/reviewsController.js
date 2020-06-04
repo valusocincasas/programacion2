@@ -3,7 +3,6 @@ let op= db.Sequelize.Op;
 
 module.exports = {
     detail: function(req,res) {
-        console.log (11111173636)
         db.Resena.findAll({
             where: {
                 peliculaId: req.query.serieId

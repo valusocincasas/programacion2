@@ -21,6 +21,7 @@
                 <li class="menu-item home"><a class="color-violet" href="home">Inicio</a></li>
                 <li class="menu-item"><a class="color-violet" href="seriesGenres">Géneros</a></li>
                 <li class="menu-item"><a class="color-violet" href="buscador">Buscador</a></li>
+                <li class="menu-item"><a class="color-violet" href="buscaUsuario">Mis reseñas</a></li>
                 <li class="menu-item search">
                     <form class="" action="resultadoBusqueda" method="GET">
                         <input class="input-search" type="text" name="query" value="">
@@ -79,7 +80,7 @@
             <% } %>
     </ul> 
       </div>
-     <form action="/crearReview" method="get">
+     <form action="/detalle" method="get">
        <div>
          <input type="hidden" name="idPelicula" value="<%= idPelicula %>">
        </div>
@@ -96,15 +97,25 @@
       </div>
        <div>
          <input type="radio" name="ranking" value="1">
+         <label for="">1</label>
          <input type="radio" name="ranking" value="2">
+         <label for="">2</label>
          <input type="radio" name="ranking" value="3">
+         <label for="">3</label>
          <input type="radio" name="ranking" value="4">
+         <label for="">4</label>
          <input type="radio" name="ranking" value="5">
+         <label for="">5</label>
          <input type="radio" name="ranking" value="6">
+         <label for="">6</label>
          <input type="radio" name="ranking" value="7">
+         <label for="">7</label>
          <input type="radio" name="ranking" value="8">
+         <label for="">8</label>
          <input type="radio" name="ranking" value="9">
+         <label for="">9</label>
          <input type="radio" name="ranking" value="10">
+         <label for="">10</label>
        </div>
        <div>
          <input type="submit" value="Enviar">

@@ -34,12 +34,12 @@
         </nav>
     </header>
     <ul>
-    <h3>Estas viendo el perfil del usuario <%= usuario.nombreCompleto %> </h3>
+    <h3 class="perfil">Estas viendo el perfil del usuario <%= usuario.nombreCompleto %> </h3>
     <br>
-    <h3>Email: <%= usuario.email%></h3>
+    <h3 class="perfil">Email: <%= usuario.email%></h3>
     <br>
-    <h3>Fecha de nacimiento:<%= usuario.fechaNacimiento%></h3>
-    <h3>Reseñas</h3>
+    <h3 class="perfil">Fecha de nacimiento:<%= usuario.fechaNacimiento%></h3>
+    <h3 class="perfil">Reseñas</h3>
     <% if (reviews.length > 0) { %>
       <% for( let i = 0; i < reviews.length; i++ ) { %>
         <small><%= reviews[i].usuario %></small>
@@ -48,7 +48,7 @@
               <hr>
           </li>
       <% } else{ %>
-          <h2>No se encontaron reseñas escritas</h2>
+          <h4>No se encontaron reseñas escritas</h4>
           <% } %>
 
   

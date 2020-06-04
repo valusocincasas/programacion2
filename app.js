@@ -16,6 +16,7 @@ var usuariosRouter = require ('./routes/usuarios');
 var loginRouter = require ('./routes/modulo-login');
 var logRouter = require ('./routes/login');
 var buscaUsuarioRouter = require ('./routes/buscaUsuario');
+var reviewsRouter = require ('./routes/reviews'); 
 var app = express();
 
 // view engine setup
@@ -40,6 +41,7 @@ app.use ('/usuarios',usuariosRouter);
 app.use ('/validacion',loginRouter);
 app.use ('/login',logRouter);
 app.use ('/buscaUsuario',buscaUsuarioRouter);
+app.use ('/reviews',reviewsRouter);
 app.use (express.urlencoded ({ extended:false}));
 app.use (express.json ());
 
