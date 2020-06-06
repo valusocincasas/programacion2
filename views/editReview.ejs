@@ -6,13 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form id= "formlogin" action="/users/reviews/edit/ <%= resultado.id %>" method= "POST">
-    <h1 style= "color:white"> Edit Review </h1>
-    
-    </form>
-
-
-    <form id= "formlogin" action="/users/reviews/edit/ <%= resultado.id %>" method="post">
+   
+    <form id= "formlogin" action="/login/reviews/edit/ <%= resultado.id %>" method="post">
         <h1 style= "color:white"> Edit Review </h1>
         <div class="imgcontainer">
           <img src="img_avatar2.png" alt="Avatar" class="avatar">
@@ -31,11 +26,16 @@
          
         </div>
       
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
+       
+        <div>
+        <label for="resena"><b>Review</b></label>
+        <textarea name="resena" id="resena" cols="50" rows="3"> <%= resultado.resena %> </textarea>
+        <label for="resena"><b>Review</b>Puntaje: </label>
+        <input type="range" id="points" name="puntaje" min="0" max="10" onchange="updateValue (this.value)" >
+        <p> <%=resultado.puntaje %> </p>
         </div>
-        
+
+        <button type="submit" name="button"> OK </button>
       </form>
 
 

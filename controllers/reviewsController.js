@@ -1,5 +1,6 @@
 let db= require('../database/models')
 let op= db.Sequelize.Op;
+const moduloLogin = require('./modulo-loginController')
 
 module.exports = {
     detail: function(req,res) {
@@ -19,14 +20,15 @@ module.exports = {
         moduloLogin.validar(req.body.email, req.body.password)
         .then(function(usuario) {
             if(usuario != undefined) {
+                
                 db.Resena.create ({
-                    idPelicula: req.body.serieId,
-                    idUser: usuario.id,
-                    text: req.body.textoResena,
-                    ranking: req.body.puntaje
+                    peliculaId: req.body.idPelicula,
+                   userId: usuario.id,
+                    textoResena: req.body.textoResena,
+                    puntaje: req.body.puntaje
                 })
                 .then(function() {
-                    res.redirect('/detalle/?idPelicula='+req.body.peliculaId)
+                    res.redirect('/detalle?serieId='+req.body.idPelicula)
                 })
             } else {
                 res.send("Hubo un error al crear esta reseña")

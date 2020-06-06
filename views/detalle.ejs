@@ -70,8 +70,9 @@
       <h2>Lista de reseñas</h2>
       <% if (reviews.length > 0) { %>
         <% for( let i = 0; i < reviews.length; i++ ) { %>
-          <small><%= reviews[i].usuario %></small>
-          <p><%= reviews[i].textoResena %></p>            
+          <small><%= reviews[i].usuarioId %></small>
+          <h3><%= reviews[i].textoResena %></h3>  
+          <h3><%= reviews[i].puntaje %></h3>            
                 <% } %>
                 <hr>
             </li>
@@ -80,7 +81,7 @@
             <% } %>
     </ul> 
       </div>
-     <form action="/detalle" method="get">
+     <form action="/detalle" method="post">
        <div>
          <input type="hidden" name="idPelicula" value="<%= idPelicula %>">
        </div>
@@ -93,7 +94,7 @@
         <input type="password" name="password" name="password">
       </div>
       <div>
-        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+        <textarea name="textoResena" id="text" cols="30" rows="10"></textarea>
       </div>
        <div>
          <input type="radio" name="ranking" value="1">

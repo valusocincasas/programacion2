@@ -1,4 +1,7 @@
-const modulo = require('./modulo-loginController');
+const db = require('../database/models');
+const login = require('./modulo-loginController');
+const OP = db.Sequelize.Op;
+let bcrypt =require('bcryptjs');
 
 const controlador = {
     login: (req,res) =>{
@@ -34,12 +37,12 @@ const controlador = {
         moduloLogin.validar (req.body.email, req.body.password)
         .then (resultado => {
         if (resultado ==undefined) {
-        res.redirect ('/users/reviews?problema= no se encontro usuario'); } //redirecciona de nuevo al login
+        res.redirect ('/login/reviews?problema= no se encontro usuario'); } //redirecciona de nuevo al login
         else {
-        res.redirect ('/users/reviews/' + resultado.id) }
+        res.redirect ('/login/reviews/' + resultado.id) }
         })
         }, 
-        //el login en la vista en el form, tiene como action: '/users/reviews' y metodo post (formato de logeo para ver resenias)
+        
         
         getReviews: function (req,res) {
         db.resenas.findAll ({
@@ -74,7 +77,7 @@ const controlador = {
         }
         })
         .then(() => {
-        res.redirect ('/users/reviews/' + resultado.id );
+        res.redirect ('/login/reviews/' + resultado.id );
         })
         } else {
         return res.send ('Tenes mal los datos de acceso')
@@ -96,9 +99,9 @@ const controlador = {
         id: req.params.id, 
         }
         })
-        res.redirect ('/users/reviews/' + resultado.id);
+        res.redirect ('/login/reviews/' + resultado.id);
         } else {
-        res.redirect ('//users/reviews/delete/' + req.params.id);
+        res.redirect ('/login/reviews/delete/' + req.params.id);
         }
         })
         }
