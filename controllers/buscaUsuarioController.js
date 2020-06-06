@@ -20,14 +20,7 @@ let buscaUsuario = {
         })
         
     },
-    reviews: function(req,res){
-        db.resenas
-        .findByPk(req.params.id)
-        .then (function(resenas){
-            return res.render ('detalleUsuario',{resenas:resenas});
-        })
-        
-    },
+
     vista: function (req, res) {
         res.render('buscaUsuario');
     },

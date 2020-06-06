@@ -23,6 +23,8 @@
                 <li class="menu-item home"><a class="color-violet" href="home">Inicio</a></li>
                 <li class="menu-item"><a class="color-violet" href="seriesGenres">Géneros</a></li>
                 <li class="menu-item"><a class="color-violet" href="buscador">Buscador</a></li>
+                <li class="menu-item"><a class="color-violet" href="buscaUsuario">Buscador de usuarios</a></li>
+                <li class="menu-item"><a class="color-violet" href="login">Login</a></li>
                 <li class="menu-item search">
                     <form class="" action="resultadoBusqueda" method="GET">
                         <input class="input-search" type="text" name="query" value="">
@@ -40,17 +42,16 @@
     <br>
     <h3 class="perfil">Fecha de nacimiento:<%= usuario.fechaNacimiento%></h3>
     <h3 class="perfil">Reseñas</h3>
-    <% if (reviews.length > 0) { %>
-      <% for( let i = 0; i < reviews.length; i++ ) { %>
-        <small><%= reviews[i].usuario %></small>
-        <p><%= reviews[i].textoResena %></p>            
-              <% } %>
-              <hr>
-          </li>
-      <% } else{ %>
-          <h4>No se encontaron reseñas escritas</h4>
-          <% } %>
-
+    <li>
+      <% if (reviews.length > 0) { %>
+        <% for( let i = 0; i < reviews.length; i++ ) { %>
+          <small><%= reviews[i].usuarioId %></small>
+          <h3><%= reviews[i].textoResena %>, Agregada por: <%= usuario[i].nombreCompleto %>, Puntaje: <%= reviews[i].puntaje %>, Agregada el: <%= reviews[i].createdAt %>, Modificada el: <%= reviews[i].updatedAt %></h3>  
+                <% } %>
+            </li>
+        <% } else{ %>
+            <h2>No se encontaron reseñas escritas por este usuario</h2>
+            <% } %>
   
     <br>
     <footer class="footer">

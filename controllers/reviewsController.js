@@ -6,13 +6,15 @@ module.exports = {
     detail: function(req,res) {
         db.Resena.findAll({
             where: {
-                peliculaId: req.query.serieId
+                peliculaId: req.query.serieId,
+                
             }
         })
         .then(function(reviews){
             res.render('detalle', {
                 idPelicula: req.query.serieId,
                 reviews: reviews
+               
             })
         })
     },
@@ -23,9 +25,9 @@ module.exports = {
                 
                 db.Resena.create ({
                     peliculaId: req.body.idPelicula,
-                   userId: usuario.id,
+                    userId: usuario.id,
                     textoResena: req.body.textoResena,
-                    puntaje: req.body.puntaje
+                    puntaje: req.body.ranking
                 })
                 .then(function() {
                     res.redirect('/detalle?serieId='+req.body.idPelicula)
