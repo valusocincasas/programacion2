@@ -4,7 +4,7 @@ const router = express.Router ();
 
 const controller = require ('../controllers/loginController');
 router.get('/', controller.login);
-router.post('/', controller.processLogin);
+//router.post('/', controller.processLogin);
 router.get ('/reviews', controller.logUser) //formulario de logueo
 router.post ('/reviews', controller.confirmUser) //procesa login y redirecciona al listado de mis reseñas
 router.get ('/reviews/:id', controller.getReviews)//listado de mis resenias
