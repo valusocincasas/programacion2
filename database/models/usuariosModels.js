@@ -8,7 +8,12 @@ fechaNacimiento:dataTypes.DATE  },
  { timestamps: false} 
 
 );
-
+usuarios.associate = function (models) {
+    usuarios.hasMany (models.Resena, {
+        as: 'Resena', 
+    foreignKey: 'usuarioId'
+    })
+}
 return usuarios; 
 
 }

@@ -5,10 +5,11 @@ const moduloLogin = require('./modulo-loginController')
 module.exports = {
     detail: function(req,res) {
         db.Resena.findAll({
-            where: {
+            where: [{
                 peliculaId: req.query.serieId,
                 
-            },
+            }],
+            include: [{association: 'usuarios'}]
         })
         .then(function(reviews){
             res.render('detalle', {

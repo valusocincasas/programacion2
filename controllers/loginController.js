@@ -49,12 +49,13 @@ const controlador = {
         
         getReviews: function(req,res) {
             db.Resena.findAll({
-               //where: {
+            where: [{
                    
-                 //  usuarioId: req.params.id,
-                   //include: ['usuario']
+                   usuarioId: req.params.id,
+                   
                     
-           //  }
+          }],
+           include: ['usuarios']
             })
             .then (resultado => {
                 //return res.send (resultado);

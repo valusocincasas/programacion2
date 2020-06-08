@@ -44,7 +44,7 @@
         <h1> No hiciste ninguna reseña todavía </h1> 
         <% }  else { %> 
             <div class="fondocolor">
-        <h1 class= “uk-text-center”> <%= resultado[0].usuarios %> Mis Reviews </h1> 
+        <h1 class= “uk-text-center”> <%= resultado[0].usuarios.nombreCompleto %>'s Reviews </h1> 
          <% for (let i=0; i< resultado.length ; i++) { %>
             <div class= "uk-card uk-card-secondary uk-margin"> 
         <div class="uk-card-badge uk-label uk-margin-bottom" style="color: black;" > Puntaje: <%= resultado[i].puntaje %></div>
