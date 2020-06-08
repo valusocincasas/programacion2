@@ -51,9 +51,10 @@ const controlador = {
             db.Resena.findAll({
                //where: {
                    
-                   // usuarioId: req.params.id
+                 //  usuarioId: req.params.id,
+                   //include: ['usuario']
                     
-            // }
+           //  }
             })
             .then (resultado => {
                 //return res.send (resultado);
@@ -90,9 +91,9 @@ const controlador = {
         login.validar  (req.body.email, req.body.psw)
         .then (resultado => {
         if (resultado !=undefined) {
-        db.resena.update ({
-        resena: req.body.resena, 
-        puntaje: req.body.puntaje 
+        db.Resena.update ({
+        textoResena: req.body.resena, 
+        puntaje: req.body.ranking 
         },
         {
         where: {
@@ -103,7 +104,7 @@ const controlador = {
         res.redirect ('/login/reviews/' + resultado.id );
         })
         } else {
-        return res.send ('Tenes mal los datos de acceso')
+        //return res.send ('Tenes mal los datos de acceso')
         return res.redirect ('/login/reviews/edit/' + req.params.id);
         }
         });
@@ -117,7 +118,7 @@ const controlador = {
         login.validar (req.body.email, req.body.psw)
         .then (resultado => {
         if (resultado !=null) {
-        db.resena.destroy ({
+        db.Resena.destroy ({
         where: {
         id: req.params.id, 
         }

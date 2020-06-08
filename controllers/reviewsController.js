@@ -8,7 +8,7 @@ module.exports = {
             where: {
                 peliculaId: req.query.serieId,
                 
-            }
+            },
         })
         .then(function(reviews){
             res.render('detalle', {
