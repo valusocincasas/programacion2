@@ -1,30 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Nerfli</title>
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+	<link rel="stylesheet" href="/stylesheets/uikit.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="/javascripts/uikit-icons.min.js" ></script>
+    <script src="/javascripts/uikit.min.js" ></script>
+    <script src="/javascripts/home.js" ></script>
+
+
+  </head>
+  <body>
+    <header>
+        <nav>
+            <ul class="logo-list">
+                <li class="logo"> <img src="/images/dh.png" alt=""> </li>
+            </ul>
+            <ul class="ul-menu">
+                <li class="menu-item home"><a class="color-violet" href="home">Inicio</a></li>
+                <li class="menu-item"><a class="color-violet" href="seriesGenres">Géneros</a></li>
+                <li class="menu-item"><a class="color-violet" href="buscador">Buscador</a></li>
+                <li class="menu-item"><a class="color-violet" href="buscaUsuario">Buscador de usuarios</a></li>
+                <li class="menu-item"><a class="color-violet" href="usuarios/index">Registrarse</a></li>
+                <li class="menu-item"><a class="color-violet" href="login">Mis reseñas</a></li>
+                  <li class="menu-item search">
+                    <form class="" action="resultadoBusqueda" method="GET">
+                        <input class="input-search" type="text" name="query" value="">
+                        <button class="btn-search" type="submit">Buscar</button>
+                    </form>
+                </li>
+
+            </ul>
+        </nav>
+	</header>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<div class="registrocool">
+		<h3 class="regi">Registrate!</h3>
+		<br>
+		<br>
+		<br>
+
     <form action="/usuarios/store" method="POST">
 		<label>Nombre de usuario:</label>
 		<input type="text" name="user" value= "">
 		<br>
+		<br>
+		<br>
+
 		
 		<label>Email:</label>
 		<input type="text" name="email">
 		<br>
-		
+		<br>
+		<br>
+
 		<label>Password:</label>
 		<input type="text" name="password">
 		<br>
-		
+		<br>
+		<br>
+
 		<label>Fecha de nacimiento:</label>
 		<input type="date" name="birthDate">
 		<br>
-		
+		<br>
+		<br>
+
 		<button type="submit">GUARDAR</button>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
 	</form>
-	
+</div>
+<br>
+<footer class="footer">
+<br>
+  <p class="footerT">Catalina Cardona  -  Serena Papazian  -  Valentina Socin Casas</p>
+<br>
 </body>
 </html>

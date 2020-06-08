@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Nerfli</title>
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/uikit.min.css">
+
+    <script src="/javascripts/uikit-icons.min.js" ></script>
+    <script src="/javascripts/uikit.min.js" ></script>
+    <script src="/javascripts/home.js" ></script>
+
+
+  </head>
+  <body>
+    <header>
+        <nav>
+            <ul class="logo-list">
+                <li class="logo"> <img src="/images/dh.png" alt=""> </li>
+            </ul>
+            <ul class="ul-menu">
+                <li class="menu-item home"><a class="color-violet" href="home">Inicio</a></li>
+                <li class="menu-item"><a class="color-violet" href="seriesGenres">Géneros</a></li>
+                <li class="menu-item"><a class="color-violet" href="buscador">Buscador</a></li>
+                <li class="menu-item"><a class="color-violet" href="buscaUsuario">Buscador de usuarios</a></li>
+                <li class="menu-item"><a class="color-violet" href="usuarios/index">Registrarse</a></li>
+                <li class="menu-item"><a class="color-violet" href="login">Mis reseñas</a></li>
+                  <li class="menu-item search">
+                    <form class="" action="resultadoBusqueda" method="GET">
+                        <input class="input-search" type="text" name="query" value="">
+                        <button class="btn-search" type="submit">Buscar</button>
+                    </form>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
     <div class= "uk-container" > 
         <div class= "uk-section uk-section-large"> 
 
@@ -13,10 +43,11 @@
     <% if (resultado.length ==0) {%>
         <h1> No hiciste ninguna reseña todavía </h1> 
         <% }  else { %> 
-        <h1 class= “uk-text-center”> <%= resultado[0].usuarios %> ‘s reviews </h1> 
+            <div class="fondocolor">
+        <h1 class= “uk-text-center”> <%= resultado[0].usuarios %> Mis Reviews </h1> 
          <% for (let i=0; i< resultado.length ; i++) { %>
             <div class= "uk-card uk-card-secondary uk-margin"> 
-        <div class="uk-card-badge uk-label uk-margin-bottom" style="color: black;" > score: <%= resultado[i].puntaje %></div>
+        <div class="uk-card-badge uk-label uk-margin-bottom" style="color: black;" > Puntaje: <%= resultado[i].puntaje %></div>
         <div class= “uk-card-body"> 
             <h4 class= "uk-margin-top"> <%= resultado[i].textoResena %> </h4> </div>
             <div class= "uk-card-footer uk-flex uk-flex-between"> 
@@ -27,7 +58,13 @@
     </div> 
     <% } %>
     <%} %>
+</div>
          </div>
         </div>
+        <br>
+        <footer class="footer">
+        <br>
+          <p class="footerT">Catalina Cardona  -  Serena Papazian  -  Valentina Socin Casas</p>
+       <br>
 </body>
 </html>

@@ -56,3 +56,24 @@ footer{
 	width: 100%;
 	
   }
+.registrocool{
+	color: whitesmoke;
+	text-align: center;
+	background-image:linear-gradient(rgba(112, 19, 138, 0.86), #c5454d);
+	width: 100%;
+	font-weight: bolder;
+}
+.regi{
+	text-align: center;
+	color: rgb(245, 228, 247);
+    font: bold 52px Helvetica, Arial, Sans-Serif;
+    text-shadow: 1px 1px#1b0518, 2px 2px #1b0518, 3px 3px #1b0518e2;
+
+}
+.login
+{
+	text-align: center;
+	color: rgb(245, 228, 247);
+    font: bold 52px Helvetica, Arial, Sans-Serif;
+    text-shadow: 1px 1px#1b0518, 2px 2px #1b0518, 3px 3px #1b0518e2;	
+}
