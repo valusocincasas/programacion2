@@ -29,7 +29,7 @@
        
         <div>
         <label for="resena"><b>Review</b></label>
-        <textarea name="resena" id="resena" cols="50" rows="3"> <%= resultado.resena %> </textarea>
+        <textarea name="resena" id="resena" cols="50" rows="3"> <%=resultado.textoResena %> </textarea>
         <label for="resena"><b> </b>Puntaje: </label>
         <input type="range" id="points" name="puntaje" min="0" max="10" onchange="updateValue (this.value)" >
         <p> <%=resultado.puntaje %> </p>

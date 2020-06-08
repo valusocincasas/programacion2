@@ -78,7 +78,7 @@ const controlador = {
         
         showEdit: function (req,res) {
         db.Resena.findOne ({
-        where: [{Id: req.params.id }]
+        where: [{id: req.params.id }]
          })
         .then (resultado => {
         //return res.send (resultado);
