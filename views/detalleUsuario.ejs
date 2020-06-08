@@ -46,8 +46,8 @@
     <li>
       <% if (reviews.length > 0) { %>
         <% for( let i = 0; i < reviews.length; i++ ) { %>
-          <small><%= reviews[i].usuarioId %></small>
-          <h3><%= reviews[i].textoResena %>, Agregada por: <%= usuario[i].nombreCompleto %>, Puntaje: <%= reviews[i].puntaje %>, Agregada el: <%= reviews[i].createdAt %>, Modificada el: <%= reviews[i].updatedAt %></h3>  
+          <h3>Id del usuario<%= reviews[i].usuarioId %></h3>
+          <h3><%= reviews[i].textoResena %>, Puntaje: <%= reviews[i].puntaje %>, Agregada el: <%= reviews[i].createdAt %>, Modificada el: <%= reviews[i].updatedAt %></h3>  
                 <% } %>
             </li>
         <% } else{ %>

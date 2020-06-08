@@ -25,7 +25,7 @@ module.exports = {
                 
                 db.Resena.create ({
                     peliculaId: req.body.idPelicula,
-                    userId: usuario.id,
+                    usuarioId: usuario.id,
                     textoResena: req.body.textoResena,
                     puntaje: req.body.ranking
                 })
