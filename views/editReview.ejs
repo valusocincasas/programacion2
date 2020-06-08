@@ -30,10 +30,32 @@
         <div>
         <label for="resena"><b>Review</b></label>
         <textarea name="resena" id="resena" cols="50" rows="3"> <%=resultado.textoResena %> </textarea>
-        <label for="resena"><b> </b>Puntaje: </label>
-        <input type="range" id="points" name="puntaje" min="0" max="10" onchange="updateValue (this.value)" >
-        <p> <%=resultado.puntaje %> </p>
+        
+        <div>
+          <label for="resena"><b> </b>Puntaje: </label>
+          <input type="radio" name="ranking" value="1">
+          <label for="">1</label>
+          <input type="radio" name="ranking" value="2">
+          <label for="">2</label>
+          <input type="radio" name="ranking" value="3">
+          <label for="">3</label>
+          <input type="radio" name="ranking" value="4">
+          <label for="">4</label>
+          <input type="radio" name="ranking" value="5">
+          <label for="">5</label>
+          <input type="radio" name="ranking" value="6">
+          <label for="">6</label>
+          <input type="radio" name="ranking" value="7">
+          <label for="">7</label>
+          <input type="radio" name="ranking" value="8">
+          <label for="">8</label>
+          <input type="radio" name="ranking" value="9">
+          <label for="">9</label>
+          <input type="radio" name="ranking" value="10">
+          <label for="">10</label>
+          <p> Puntaje anterior: <%=resultado.puntaje %> </p>
         </div>
+      
 
         <button type="submit" name="button"> OK </button>
       </form>
