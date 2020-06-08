@@ -40,7 +40,7 @@ const controlador = {
         login.validar (req.body.email, req.body.psw)
         .then (resultado => {
         if (resultado ==undefined) {
-        res.redirect ('/login/reviews?problema= no se encontro usuario'); } //redirecciona de nuevo al login
+        res.redirect ('/login/reviews'); } //redirecciona de nuevo al login
         else {
         res.redirect ('/login/reviews/'+  resultado.id) }
         })
@@ -49,11 +49,11 @@ const controlador = {
         
         getReviews: function(req,res) {
             db.Resena.findAll({
-               // where: {
+               //where: {
                    
-                    //usuarioId: req.params.id
+                   // usuarioId: req.params.id
                     
-               // }
+            // }
             })
             .then (resultado => {
                 //return res.send (resultado);

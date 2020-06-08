@@ -20,9 +20,9 @@
         <div class= “uk-card-body"> 
             <h4 class= "uk-margin-top"> <%= resultado[i].textoResena %> </h4> </div>
             <div class= "uk-card-footer uk-flex uk-flex-between"> 
-<a class= "uk-text-success" href="/users/reviews/edit/ <%= resultado [i].id %>"> Edit </a>
-<a class= "uk-text-primary" href="/detalle?idPelicula= = <%= resultado [i].peliculaId %>"> Go to movie </a>
-<a class= "uk-text-danger" href="/users/reviews/delete/ <%= resultado [i].id %>"> Delete </a>
+<a class= "uk-text-success" href="/login/reviews/edit/<%= resultado[i].id %>"> Edit </a>
+
+<a class= "uk-text-danger" href="/login/reviews/delete/<%= resultado[i].id %>"> Delete </a>
             </div>
     </div> 
     <% } %>

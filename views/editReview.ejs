@@ -7,10 +7,10 @@
 </head>
 <body>
    
-    <form id= "formlogin" action="/login/reviews/edit/<% = resultado.id %>" method="post">
+    <form id= "formlogin" action="/login/reviews/edit/<%=resultado.id %>" method="post">
         <h1 style= "color: black"> Edit Review </h1>
         <div class="imgcontainer">
-          <img src="img_avatar2.png" alt="Avatar" class="avatar">
+          
         </div>
       
         <div class="container">
@@ -30,7 +30,7 @@
         <div>
         <label for="resena"><b>Review</b></label>
         <textarea name="resena" id="resena" cols="50" rows="3"> <%= resultado.resena %> </textarea>
-        <label for="resena"><b>Review</b>Puntaje: </label>
+        <label for="resena"><b> </b>Puntaje: </label>
         <input type="range" id="points" name="puntaje" min="0" max="10" onchange="updateValue (this.value)" >
         <p> <%=resultado.puntaje %> </p>
         </div>
