@@ -8,10 +8,10 @@ fechaNacimiento:dataTypes.DATE  },
  { timestamps: false} 
 
 );
-usuarios.associate = function (models) {
-    usuarios.hasMany (models.Resena, {
-        as: 'Resena', 
-    foreignKey: 'usuarioId'
+usuarios.associate = function (models) { //associate
+    usuarios.hasMany (models.Resena, { //hasMany por que un usuario tiene muchas reseñas
+        as: 'Resena', //alias de la relacion
+    foreignKey: 'usuarioId' //foreign key que relaciona las dos tablas
     })
 }
 return usuarios; 

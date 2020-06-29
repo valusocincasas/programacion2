@@ -4,18 +4,19 @@ console.log(OP)
 
 let buscaUsuario = {
 
-    porId: function(req,res){
+    porId: function(req,res){ //busca en la DB usuarios por su id
         db.usuarios
-        .findByPk(req.params.id)
+        .findByPk(req.params.id) 
         .then (function(usuario){
             db.Resena
-            .findAll({
+            .findAll({ 
                 where: {
-                    usuarioId: req.params.id, 
+                    usuarioId: req.params.id, //busca el usuario con el id pasado, usuarioId es el nombre de la columna
                 }
             })
-            .then (function(reviews){
-                return res.render ('detalleUsuario',{reviews:reviews,usuario:usuario});
+            .then (function(reviews){ //then por que es un findAll, osea un pedido asincronico
+                return res.render ('detalleUsuario',{reviews:reviews,usuario:usuario}); //renderiza la vista de detalleUsuario
+                //pasa como parametros reviews y usuario
             })
         })
         
@@ -26,16 +27,16 @@ let buscaUsuario = {
     },
     buscador: function (req,res) {
         res.render ('buscaUsuario')
-    },
-    busqueda: function (req, res) {
-         db.usuarios.findAll({
+    }, //renderiza la vista busca usuario, va por get por que es un formulario
+    busqueda: function (req, res) { //viaja por post por que el cliente envia datos sensibles al servidor
+         db.usuarios.findAll({ //pedido asincronico, busca todos los usuarios de la DB, usa el modelo entonces lo requiere antes 
             where: {
-                email: { [OP.like]: '%' + req.body.email + '%'}
+                email: { [OP.like]: '%' + req.body.email + '%'} //requiere un operador de sequelize, importados arriba de todo
             },
         })
         .then(function(usuarioBuscado) {
-            console.log(usuarioBuscado)
-            res.render('usuarioBuscado', {
+            console.log(usuarioBuscado) //imprime el resultado de la busqueda
+            res.render('usuarioBuscado', { //renderiza la vista del usuario buscado
                 usuarioBuscado: usuarioBuscado
             })
 

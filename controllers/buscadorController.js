@@ -4,3 +4,5 @@ const controlador = {
     }
 };
 module.exports = controlador
+
+//renderiza la vista de buscador

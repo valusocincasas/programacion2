@@ -17,16 +17,17 @@ var loginRouter = require ('./routes/modulo-login');
 var logRouter = require ('./routes/login');
 var buscaUsuarioRouter = require ('./routes/buscaUsuario');
 var reviewsRouter = require ('./routes/reviews'); 
-var app = express();
+var app = express(); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); //setup de view engine que se va a utilizar, extension de las vistas
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+//acceso libre a todo lo que se encuentre en la carpeta public 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -43,7 +44,7 @@ app.use ('/login',logRouter);
 app.use ('/buscaUsuario',buscaUsuarioRouter);
 app.use ('/reviews',reviewsRouter);
 app.use (express.urlencoded ({ extended:false}));
-app.use (express.json ());
+app.use (express.json ()); //aclararle a la app que todo lo que llegue por un formulario hay que capturarlo como objeto literal y poder convertirlo a json
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -35,3 +35,5 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+//se exporta el objeto DB que luego tendremos que acceder para usar sequelize y hacer consultas
